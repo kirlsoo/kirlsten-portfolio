@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  php:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_CONNECTION=sqlite
+      - DB_DATABASE=/app/database/database.sqlite
+    working_dir: /app
