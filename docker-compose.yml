@@ -1,0 +1,57 @@
+version: "3.8"
+services:
+  php:
+    build:
+      context: .
+      dockerfile: ./docker/php/Dockerfile
+      args:
+        PHP_MODE: production
+    container_name: kirlsten_portfolio_php
+    restart: unless-stopped
+    volumes:
+      - ./:/var/www/kirlsten-portfolio
+    depends_on:
+      - mysql
+      - httpd
+      - mailhog
+    networks:
+      - kirlsten_portfolio_network
+  httpd:
+    build:
+      context: .
+      dockerfile: ./docker/httpd/Dockerfile
+    container_name: kirlsten_portfolio_httpd
+    restart: unless-stopped
+    volumes:
+      - ./:/var/www/kirlsten-portfolio
+      - ./docker/httpd/vhosts.conf:/etc/apache2/sites-available/vhosts.conf
+    depends_on:
+      - mysql
+      - mailhog
+    networks:
+      - kirlsten_portfolio_network
+  mysql:
+    image: mysql:8.0.36
+    container_name: kirlsten_portfolio_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: kirlsten_portfolio
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: kirlsten
+      MYSQL_PASSWORD: password
+    volumes:
+      - kirlsten_portfolio_database:/var/lib/mysql
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+    networks:
+      - kirlsten_portfolio_network
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: kirlsten_portfolio_mailhog
+    restart: unless-stopped
+    networks:
+      - kirlsten_portfolio_network
+networks:
+  kirlsten_portfolio_network:
+    driver: bridge
+volumes:
+  kirlsten_portfolio_database:
