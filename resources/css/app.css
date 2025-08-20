@@ -1,3 +1,111 @@
+/* resources/css/app.css */
+
+/* Define font faces here */
+@font-face {
+    font-family: 'Oxygen';
+    src: url('/fonts/Oxygen-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crimson Text';
+    src: url('/fonts/CrimsonText-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Arimo';
+    src: url('/fonts/Arimo-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Apply styles to HTML tags using @layer base */
+@layer base {
+    h1 {
+        @apply font-oxygen font-bold text-h1;
+    }
+
+    h2 {
+        @apply font-crimson italic text-h2;
+    }
+
+    p {
+        @apply font-sans text-body;
+    }
+
+    h3,
+    h4,
+    h5 {
+        @apply font-oxygen;
+    }
+}
+
+@layer components {
+
+    /* Styles for the dark blue background theme */
+    .theme-dblue {
+        @apply bg-primary-dblue text-primary-white;
+    }
+
+    /* Styles for the light blue background theme */
+    .theme-lblue {
+        @apply bg-primary-lblue text-primary-dblue;
+    }
+
+    /* Styles for the white background theme */
+    .theme-white {
+        @apply bg-primary-white text-primary-dblue;
+    }
+
+    /* Styles for the primary button on a dark background */
+    .theme-dblue .btn-primary {
+        @apply bg-accent text-primary-dblue;
+    }
+
+    /* Styles for the secondary button on a dark background */
+    .theme-dblue .btn-secondary {
+        @apply bg-accent-pink text-primary-dblue;
+    }
+
+    /* Styles for the primary button on a light blue background */
+    .theme-lblue .btn-primary {
+        @apply bg-accent text-primary-dblue;
+    }
+
+    /* Styles for the secondary button on a light blue background */
+    .theme-lblue .btn-secondary {
+        @apply bg-accent-pink text-primary-dblue;
+    }
+
+    /* Styles for the primary button on a white background */
+    .theme-white .btn-primary {
+        @apply bg-accent text-primary-dblue;
+    }
+
+    /* Styles for the secondary button on a white background */
+    .theme-white .btn-secondary {
+        @apply bg-accent-pink text-primary-dblue;
+    }
+}
+
+section {
+    height: 100vh;
+}
+
+.glass {
+    box-sizing: border-box;
+    background: radial-gradient(100% 287.82% at 0% 2.24%, rgba(255, 255, 255, 0.42) 0%, rgba(196, 196, 196, 0.06) 100%);
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 10px;
+}
