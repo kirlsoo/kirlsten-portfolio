@@ -1,10 +1,14 @@
-import React from 'react';
+// resources/js/Sections/WhatIDo.jsx
+
+// Use React.forwardRef to pass the ref from Welcome.jsx
+import React, { forwardRef } from 'react';
 import Card from '../Components/Card';
 import Blob from '../Components/Blob';
 
-export default function WhatIDo() {
+const WhatIDo = forwardRef((props, ref) => {
     return (
-        <section id="what-i-do" className="theme-lblue min-h-screen relative flex items-center justify-center text-center">
+        // Attach the ref to the root element of your section
+       <section id="what-i-do" ref={ref} className="theme-lblue min-h-screen relative flex items-center justify-center text-center">
             <div className="max-w-7xl mx-auto px-4 lg:px-8">
                 {/* Main Flexbox container for the two halves of the screen */}
                 <div className="flex flex-col lg:flex-row gap-8">
@@ -50,4 +54,6 @@ export default function WhatIDo() {
             </div>
         </section>
     );
-}
+});
+
+export default WhatIDo;

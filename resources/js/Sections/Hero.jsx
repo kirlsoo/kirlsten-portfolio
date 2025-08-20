@@ -1,8 +1,18 @@
+// resources/js/Sections/Hero.jsx
 import React from 'react';
 import WaveUp from '../Components/WaveUp';
 import styles from './Hero.module.css';
+import PuzzlePiece from '../Components/PuzzlePiece';
 
-export default function Hero() {
+// Corrected function signature to accept the nextSectionRef prop
+export default function Hero({ nextSectionRef }) { 
+    // Function to scroll to the next section
+    const scrollToNextSection = () => {
+        // Check if the ref has a value before trying to access it
+        if (nextSectionRef.current) {
+            nextSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
     return (
         <section className="theme-dblue min-h-screen relative flex items-center justify-center text-center px-4">
             <div className="flex flex-col lg:flex-row lg:gap-8">
@@ -20,6 +30,14 @@ export default function Hero() {
                     </h2>
                 </div>
             </div>
+            {/* The puzzle piece */}
+            <PuzzlePiece onComplete={scrollToNextSection} />
+            {/* The target area for the puzzle piece (adjust position as needed) */}
+            <div 
+                id="puzzle-target" 
+                className="absolute w-20 h-20 border-2 border-dashed border-accent" 
+                style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}
+            ></div>
             <div className="absolute bottom-0 left-0 right-0 lg:h-40 z-0">
                 <WaveUp />
             </div>
