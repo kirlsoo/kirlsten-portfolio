@@ -14,19 +14,21 @@ export default function AboutMe() {
 
                     {/* The left-half container for text (full width on mobile, half on desktop) */}
                     <div className="w-full lg:w-1/2">
-                        <h1 className="text-h1 font-bold mb-4">
+                        <h1 className="text-h1 font-oxygen font-bold mb-4">
                             About Me
                         </h1>
-                        <h2 className="text-accent">
-                            Random ass person I don't know what i'm doing sometimes
+                        <h2 className="text-accent font-crimson">
+                            I’m a software engineer with 3 years of professional experience building scalable web applications and APIs.
                         </h2>
                     </div>
                     <hr/>
                     {/* The right-half container for the cards (full width on mobile, half on desktop) */}
                     <div className="w-full lg:w-1/2">
-                        <p> Meow meow meow meow meow meow Meow meow meow meow meow meow Meow meow meow meow meow meow Meow meow meow meow meow meow Meow meow meow meow meow meow Meow meow meow meow meow meow Meow meow meow meow meow meow </p>
+                        <p className='font-arimo'>  I enjoy solving complex backend problems, optimizing databases, and turning business needs into reliable technical solutions. </p>
                         <br/>
-                        <p> Meow meow meow meow meow meow Meow meow meow meow meow meow Meow meow meow meow meow meow Meow meow meow meow meow meow Meow meow meow meow meow meow Meow meow meow meow meow meow Meow meow meow meow meow meow </p>
+                        <p className='font-arimo'> I’ve worked with international teams in agile environments, contributing across the stack — from Laravel APIs to React frontends and AWS deployments. I’m looking for opportunities where I can grow my expertise in full-stack development and cloud-based architectures. </p>
+                        <br/>
+                        <p className='font-arimo'>When I’m not coding, I enjoy exploring playing strategy games, creating journals, and the occasional crochet.</p>
                     </div>
                 </div>
             </div>
