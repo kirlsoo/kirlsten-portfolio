@@ -14,7 +14,7 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-                sans: ['Arimo', ...defaultTheme.fontFamily.sans],
+                arimo: ['Arimo', ...defaultTheme.fontFamily.sans],
                 oxygen: ['Oxygen', 'sans-serif'],
                 crimson: ['"Crimson Text"', 'serif'],
             },
@@ -28,7 +28,7 @@ export default {
             },
             // Custom Font Sizes
             fontSize: {
-                'h1': ['32px', { lineHeight: '1.2' }],
+                'h1': ['64px', { lineHeight: '1.2' }],
                 'h2': ['24px', { lineHeight: '1.3' }],
                 'body': ['12px', { lineHeight: '1.5' }],
                 'h3': ['18px', { lineHeight: '1.4' }],

@@ -55,13 +55,13 @@ export default function PuzzlePiece({ onComplete }) {
         <div
             ref={pieceRef}
             onMouseDown={handleMouseDown}
-            className="absolute z-50 cursor-grab active:cursor-grabbing transition-all duration-100"
+            className="absolute z-50 cursor-grab active:cursor-grabbing transition-all duration-100 select-none"
             style={{ 
                 left: '200px', // Initial position
                 top: '200px',
             }}
         >
-            <div className="bg-accent rounded-full w-12 h-12 flex items-center justify-center">
+            <div className="bg-primary rounded-full w-12 h-12 flex items-center justify-center">
                 🧩
             </div>
         </div>
