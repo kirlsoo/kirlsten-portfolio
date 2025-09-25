@@ -34,14 +34,16 @@ export default function Hero({ nextSectionRef }) {
                 {/* Right: Text */}
                 <div className="w-full lg:w-1/2 z-10">
                     <h1 className="text-h1 font-oxygen font-bold mb-4">
-                        I'm Kristen, 
+                        I'm KRISTEN,
                     </h1>
                     <h2 className="text-accent mb-6">
-                        Software Engineer with 3 years of professional experience designing, developing, 
+                        Software Engineer with 3 years of professional experience designing, developing,
                         and maintaining web and software applications.
                     </h2>
                     <button className="theme-dblue btn-secondary rounded-lg px-6 py-3">
-                        View my Resume
+                        <a href="https://drive.google.com/file/d/13s7oC4otqfPqYs23uEvB2cqvj-iaEkQH/view?usp=sharing" target="_blank">
+                            View my Resume
+                        </a>
                     </button>
                 </div>
             </div>
